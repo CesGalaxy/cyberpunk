@@ -9,6 +9,8 @@ class Video:
         if not self.cap.isOpened():
             print("Cannot open camera!")
             exit()
+        
+        cv.namedWindow("frame")
 
         self.last_tick = time()
         self.fps = 0
@@ -27,6 +29,8 @@ class Video:
         if not ret:
             print("Can't receive frame (stram end?).")
             return False
+        
+        frame = cv.flip(frame, 1)
         
         ok, frame = self.draw(frame)
 

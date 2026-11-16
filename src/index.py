@@ -3,9 +3,11 @@ import effects.index
 
 c = cam.Video()
 
-f = effects.index.Gray()
-f.move(10, 10)
+f = effects.index.Green()
+
+p = effects.index.Pink()
 
 c.effects.append(f)
+c.effects.append(p)
 
 c.loop()
